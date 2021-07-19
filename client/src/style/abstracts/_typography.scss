@@ -1,0 +1,12 @@
+@use "colors";
+
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+
+body {
+  font-family: "Arvo", serif;
+}
+
+h1 {
+  color: colors.$primary;
+  font-size: 2.5rem;
+}

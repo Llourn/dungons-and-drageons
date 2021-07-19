@@ -1,0 +1,9 @@
+.box-value {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 200px;
+  span {
+    text-align: right;
+    padding-right: 1rem;
+  }
+}
