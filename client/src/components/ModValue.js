@@ -15,7 +15,7 @@ const ModValue = () => {
         setToggle(false);
       }}
     >
-      {name}
+      {name === "" ? "N/A" : name}
     </p>
   ) : (
     <input
@@ -25,7 +25,7 @@ const ModValue = () => {
       type="text"
       onBlur={() => setToggle(true)}
       onKeyDown={(event) => {
-        if (event.key === "Enter") {
+        if (event.key === "Enter" || event.key === "Tab") {
           setName(event.target.value);
           setToggle(true);
           event.preventDefault();

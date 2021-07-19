@@ -6,4 +6,10 @@
 // Colors, mixins, etc
 @use "./abstracts/typography";
 
-// @use 'App';
+// Components
+@use './components/App';
+@use './components/Sheet';
+@use './components/ModValue';
+
+// Layout
+@use './main';

@@ -7,3 +7,126 @@
     padding-right: 1rem;
   }
 }
+
+.page-1 {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.character-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+}
+
+.character-name {
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 0.75em;
+  }
+}
+
+.character-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  :nth-child(1) {
+    flex-basis: 15%;
+  }
+  :nth-child(2) {
+    flex-basis: 5%;
+  }
+  :nth-child(3) {
+    flex-basis: 20%;
+  }
+  :nth-child(4) {
+    flex-basis: 20%;
+  }
+  :nth-child(5) {
+    flex-basis: 10%;
+  }
+  :nth-child(6) {
+    flex-basis: 20%;
+  }
+  :nth-child(7) {
+    flex-basis: 10%;
+  }
+
+  * {
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 0.75em;
+    }
+  }
+}
+
+.column1 {
+  width: 33%;
+}
+
+.character-attributes-skills {
+  background-color: pink;
+  display: flex;
+  .attributes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.attribute {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .mod-value-input {
+    width: 5ch;
+  }
+}
+
+.other-proficiencies {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-container > * {
+  padding-bottom: 10px;
+}
+
+// column 2
+.ac-init-spd {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .mod-value-input {
+      width: 5ch;
+    }
+  }
+}
+
+.current-hit-point-values {
+  display: flex;
+  .mod-value-input {
+    width: 5ch;
+  }
+}
+
+.hit-dice {
+  * {
+    display: flex;
+    gap: 5px;
+  }
+}
+
+.death-saves > * {
+  display: flex;
+}

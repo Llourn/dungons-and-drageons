@@ -1,12 +1,24 @@
 @use "colors";
 
 @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 body {
-  font-family: "Arvo", serif;
+  // font-family: "Arvo", serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1 {
   color: colors.$primary;
   font-size: 2.5rem;
+}
+
+h2 {
+  color: colors.$primary;
+  font-size: 2rem;
+}
+
+p,
+input {
+  font-size: 1rem;
 }
