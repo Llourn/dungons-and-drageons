@@ -2,20 +2,15 @@ import ModValue from "../ModValue";
 
 const SheetHeader = () => {
   return (
-    <section className="character-info">
-      <div className="character-name">
+    <section className="sheet-header">
+      <p>
+        <b>Sheet header</b>
+      </p>
+      <section className="character-name">
         <ModValue />
         <span>Character Name</span>
-      </div>
-      <div className="character-details">
-        <div>
-          <ModValue />
-          <span>Class</span>
-        </div>
-        <div>
-          <ModValue />
-          <span>Level</span>
-        </div>
+      </section>
+      <section className="character-details">
         <div>
           <ModValue />
           <span>Background</span>
@@ -36,7 +31,17 @@ const SheetHeader = () => {
           <ModValue />
           <span>Experience Points</span>
         </div>
-      </div>
+      </section>
+      <section className="class-details">
+        <div>
+          <ModValue />
+          <span>Class</span>
+        </div>
+        <div>
+          <ModValue />
+          <span>Level</span>
+        </div>
+      </section>
     </section>
   );
 };
