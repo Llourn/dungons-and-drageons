@@ -1,4 +1,5 @@
 import ModText from "../ModText";
+import Tiptap from "../Tiptap";
 
 const Block8 = () => {
   return (
@@ -7,7 +8,7 @@ const Block8 = () => {
         <b>Block Eight</b>
       </p>
       <span>Allies & Organizations</span>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <Tiptap content="Click here to edit this section. 📝" />
       <span>Symbol</span>
       <ModText />
       <div>IMAGE PLACEHOLDER</div>

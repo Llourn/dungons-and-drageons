@@ -1,0 +1,5 @@
+@use "../abstracts/colors";
+
+.ProseMirror {
+  background: colors.$tertiary;
+}

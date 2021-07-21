@@ -1,5 +1,6 @@
 import ModText from "../ModText";
 import ModTextArea from "../ModTextArea";
+import Tiptap from "../Tiptap";
 
 const Block2 = () => {
   return (
@@ -9,10 +10,12 @@ const Block2 = () => {
       </p>
       <section>
         <span>Racial Traits</span>
-        <ModTextArea />
+        <Tiptap content="<p>Click here to edit this section. 📝</p>" />
       </section>
-      <section>
-        <span>Proficiencies</span>
+      <section className="proficiencies">
+        <div>
+          <span>Proficiencies</span>
+        </div>
         <div>
           <input type="checkbox" name="" id="" />
           <span>Light Armour</span>
@@ -40,9 +43,9 @@ const Block2 = () => {
       </section>
       <section>
         <span>Languages</span>
-        <ModText />
+        <Tiptap content="<p>Click here to edit this section. 📝</p>" />
         <span>Tools & Other Proficiencies</span>
-        <ModText />
+        <Tiptap content="<p>Click here to edit this section. 📝</p>" />
       </section>
     </section>
   );

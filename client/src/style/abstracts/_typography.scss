@@ -8,11 +8,13 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-b {
+b,
+strong {
   font-weight: bold;
 }
 
-i {
+i,
+em {
   font-style: italic;
 }
 
@@ -21,7 +23,8 @@ u {
 }
 
 p,
-span {
+span,
+input {
   font-size: 0.9rem;
 }
 
@@ -33,9 +36,4 @@ h1 {
 h2 {
   color: colors.$primary;
   font-size: 2rem;
-}
-
-p,
-input {
-  font-size: 1rem;
 }

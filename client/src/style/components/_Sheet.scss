@@ -1,7 +1,7 @@
 // Sheet styling
 // General
 .sheet {
-  columns: 14rem 3;
+  columns: 14rem 10;
 
   > :first-child {
     column-span: all;
@@ -91,5 +91,13 @@
 
   > :nth-child(4) {
     left: 9ch;
+  }
+}
+
+// Block 2
+.proficiencies {
+  columns: 2;
+  :first-child {
+    column-span: all;
   }
 }

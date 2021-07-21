@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Tiptap from "./Tiptap";
 
 const ModTextArea = () => {
   const [toggle, setToggle] = useState(true);
@@ -35,7 +36,8 @@ const ModTextArea = () => {
     </p>
   ) : (
     <div>
-      <textarea
+      <Tiptap />
+      {/* <textarea
         className="mod-textarea-input"
         autoFocus
         // placeholder={name}
@@ -51,7 +53,7 @@ const ModTextArea = () => {
         }}
       >
         Cancel
-      </button>
+      </button> */}
     </div>
   );
 };

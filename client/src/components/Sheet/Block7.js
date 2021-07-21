@@ -1,3 +1,5 @@
+import Tiptap from "../Tiptap";
+
 const Block7 = () => {
   return (
     <section>
@@ -5,7 +7,7 @@ const Block7 = () => {
         <b>Block Seven</b>
       </p>
       <span>Character Backstory</span>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <Tiptap content="Click here to edit this section. 📝" />
     </section>
   );
 };
