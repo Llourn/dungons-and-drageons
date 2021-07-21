@@ -5,7 +5,7 @@ import Skill from "./components/Skill";
 const Block1 = () => {
   return (
     <section>
-      <p>
+      <p className="block-title">
         <b>Block One</b>
       </p>
       <section className="passives-and-proficiency">

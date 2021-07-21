@@ -3,7 +3,7 @@ import Tiptap from "../Tiptap";
 const Block10 = () => {
   return (
     <section>
-      <p>
+      <p className="block-title">
         <b>Block Ten</b>
       </p>
       <span>Treasure</span>

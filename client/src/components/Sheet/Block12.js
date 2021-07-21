@@ -1,7 +1,7 @@
 const Block12 = () => {
   return (
     <section>
-      <p>
+      <p className="block-title">
         <b>Block Twelve</b>
       </p>
       <span>Cantrips</span>

@@ -3,7 +3,7 @@ import ModText from "../ModText";
 const SheetHeader = () => {
   return (
     <section className="sheet-header">
-      <p>
+      <p className="block-title">
         <b>Sheet header</b>
       </p>
       <section className="character-name">

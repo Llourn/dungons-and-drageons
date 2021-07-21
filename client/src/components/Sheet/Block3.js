@@ -3,7 +3,7 @@ import ModText from "../ModText";
 const Block3 = () => {
   return (
     <section>
-      <p>
+      <p className="block-title">
         <b>Block Three</b>
       </p>
       <section>

@@ -2,6 +2,14 @@
 // General
 .sheet {
   columns: 14rem 10;
+  column-gap: 3rem;
+  column-rule: 1px dotted #ccc;
+
+  > section {
+    border-bottom: 2px dashed slategrey;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 
   > :first-child {
     column-span: all;
@@ -10,6 +18,13 @@
   * {
     break-inside: avoid;
   }
+}
+
+.block-title {
+  display: none;
+}
+
+.sheet {
 }
 
 .label {
@@ -23,6 +38,8 @@
 // Sheet header
 .sheet-header {
   columns: 14rem 3;
+  column-gap: 3rem;
+  column-rule: 1px dotted #ccc;
 }
 
 .character-details {
