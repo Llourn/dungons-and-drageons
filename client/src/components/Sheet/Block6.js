@@ -1,4 +1,4 @@
-import ModValue from "../ModValue";
+import ModText from "../ModText";
 
 const Block6 = () => {
   return (
@@ -10,27 +10,27 @@ const Block6 = () => {
         <span>Character Name Placeholder</span>
         <span>Character Name</span>
         <div>
-          <ModValue />
+          <ModText />
           <span>Age</span>
         </div>
         <div>
-          <ModValue />
+          <ModText />
           <span>Height</span>
         </div>
         <div>
-          <ModValue />
+          <ModText />
           <span>Weight</span>
         </div>
         <div>
-          <ModValue />
+          <ModText />
           <span>Eyes</span>
         </div>
         <div>
-          <ModValue />
+          <ModText />
           <span>Skin</span>
         </div>
         <div>
-          <ModValue />
+          <ModText />
           <span>Hair</span>
         </div>
       </section>

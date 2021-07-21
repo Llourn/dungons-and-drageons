@@ -1,4 +1,5 @@
-import ModValue from "../ModValue";
+import ModText from "../ModText";
+import ModTextArea from "../ModTextArea";
 
 const Block2 = () => {
   return (
@@ -8,7 +9,7 @@ const Block2 = () => {
       </p>
       <section>
         <span>Racial Traits</span>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <ModTextArea />
       </section>
       <section>
         <span>Proficiencies</span>
@@ -39,9 +40,9 @@ const Block2 = () => {
       </section>
       <section>
         <span>Languages</span>
-        <ModValue />
+        <ModText />
         <span>Tools & Other Proficiencies</span>
-        <ModValue />
+        <ModText />
       </section>
     </section>
   );

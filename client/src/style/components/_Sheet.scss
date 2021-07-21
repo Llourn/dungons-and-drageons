@@ -1,0 +1,95 @@
+// Sheet styling
+// General
+.sheet {
+  columns: 14rem 3;
+
+  > :first-child {
+    column-span: all;
+  }
+
+  * {
+    break-inside: avoid;
+  }
+}
+
+.label {
+  font-size: 0.6rem;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+// Sheet header
+.sheet-header {
+  columns: 14rem 3;
+}
+
+.character-details {
+  columns: 5rem 2;
+}
+
+// Block 1
+.passives-and-proficiency {
+  columns: 2;
+}
+
+.attributes {
+  .mod-text,
+  .mod-text-input {
+    font-size: 1.5rem;
+  }
+
+  .mod-text-input {
+    max-width: 3ch;
+  }
+
+  p,
+  span {
+    text-transform: uppercase;
+    font-size: 0.6rem;
+  }
+  > * {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+.attribute {
+  padding: 0.3rem;
+  text-align: center;
+}
+
+.saving-throw {
+  position: relative;
+
+  > :not(:first-child) {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+  > :nth-child(2) {
+    left: 3.5ch;
+  }
+
+  > :nth-child(3) {
+    left: 5ch;
+  }
+}
+
+.skill {
+  position: relative;
+
+  > :not(:first-child, :nth-child(2)) {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+  > :nth-child(3) {
+    left: 7.5ch;
+  }
+
+  > :nth-child(4) {
+    left: 9ch;
+  }
+}

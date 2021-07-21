@@ -1,4 +1,4 @@
-import ModValue from "../ModValue";
+import ModText from "../ModText";
 
 const Block4 = () => {
   return (
@@ -13,19 +13,19 @@ const Block4 = () => {
           stats/properties autopopulate.
         </p>
         <div>
-          <ModValue />
-          <ModValue />
-          <ModValue />
+          <ModText />
+          <ModText />
+          <ModText />
         </div>
         <div>
-          <ModValue />
-          <ModValue />
-          <ModValue />
+          <ModText />
+          <ModText />
+          <ModText />
         </div>
         <div>
-          <ModValue />
-          <ModValue />
-          <ModValue />
+          <ModText />
+          <ModText />
+          <ModText />
         </div>
       </section>
       <section>
@@ -35,32 +35,32 @@ const Block4 = () => {
           stats/properties autopopulate.
         </p>
         <div>
-          <ModValue />
-          <ModValue />
-          <ModValue />
+          <ModText />
+          <ModText />
+          <ModText />
         </div>
         <div>
-          <ModValue />
-          <ModValue />
-          <ModValue />
+          <ModText />
+          <ModText />
+          <ModText />
         </div>
         <div>
-          <ModValue />
-          <ModValue />
-          <ModValue />
+          <ModText />
+          <ModText />
+          <ModText />
         </div>
       </section>
       <section>
         <span>CP</span>
-        <ModValue />
+        <ModText />
         <span>SP</span>
-        <ModValue />
+        <ModText />
         <span>EP</span>
-        <ModValue />
+        <ModText />
         <span>GP</span>
-        <ModValue />
+        <ModText />
         <span>PP</span>
-        <ModValue />
+        <ModText />
       </section>
       <section>
         <span>Feats</span>

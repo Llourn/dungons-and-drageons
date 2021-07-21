@@ -1,4 +1,4 @@
-import ModValue from "../ModValue";
+import ModText from "../ModText";
 
 const Block3 = () => {
   return (
@@ -9,33 +9,33 @@ const Block3 = () => {
       <section>
         <div>
           <span>AC</span>
-          <ModValue />
+          <ModText />
         </div>
         <div>
           <span>Initiative</span>
-          <ModValue />
+          <ModText />
         </div>
         <div>
           <span>Speed</span>
-          <ModValue />
+          <ModText />
         </div>
       </section>
       <section>
         <div>
           <span>Hit Points</span>
-          <ModValue />/<ModValue />
+          <ModText />/<ModText />
         </div>
         <div>
           <span>Temporary Hit Points</span>
-          <ModValue />
+          <ModText />
         </div>
         <section>
           <span>Hit Dice</span>
           <div>
-            <ModValue /> <span>Used</span>
+            <ModText /> <span>Used</span>
           </div>
           <div>
-            <ModValue /> <span>Total</span>
+            <ModText /> <span>Total</span>
           </div>
           <div>
             <span>d8</span>

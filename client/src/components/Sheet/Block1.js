@@ -1,4 +1,6 @@
-import ModValue from "../ModValue";
+import Attribute from "./components/Attribute";
+import SavingThrow from "./components/SavingThrow";
+import Skill from "./components/Skill";
 
 const Block1 = () => {
   return (
@@ -26,195 +28,57 @@ const Block1 = () => {
       </section>
       <section className="attributes">
         <section>
+          <Attribute name="strength" />
           <section>
-            <span>Strength</span>
-            <ModValue />
-            <span>#</span>
-          </section>
-          <section>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Saving throws</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Athletics</span>
-            </div>
+            <SavingThrow />
+            <Skill name="athletics" />
           </section>
         </section>
         <section>
+          <Attribute name="dexterity" />
           <section>
-            <span>Dexterity</span>
-            <ModValue />
-            <span>#</span>
-          </section>
-          <section>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Saving throws</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Acrobatics</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Sleight of Hand</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Stealth</span>
-            </div>
+            <SavingThrow />
+            <Skill name="acrobatics" />
+            <Skill name="sleight of hand" />
+            <Skill name="stealth" />
           </section>
         </section>
         <section>
+          <Attribute name="contritution" />
           <section>
-            <span>Constitution</span>
-            <ModValue />
-            <span>#</span>
-          </section>
-          <section>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Saving throws</span>
-            </div>
+            <SavingThrow />
           </section>
         </section>
         <section>
+          <Attribute name="intelligence" />
           <section>
-            <span>Intelligence</span>
-            <ModValue />
-            <span>#</span>
-          </section>
-          <section>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Saving throws</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Arcana</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>History</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Investigation</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Nature</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Religion</span>
-            </div>
+            <SavingThrow />
+            <Skill name="arcana" />
+            <Skill name="history" />
+            <Skill name="investigation" />
+            <Skill name="nature" />
+            <Skill name="religion" />
           </section>
         </section>
         <section>
+          <Attribute name="wisdom" />
           <section>
-            <span>Wisdom</span>
-            <ModValue />
-            <span>#</span>
-          </section>
-          <section>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Saving throws</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Animal Handling</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Insight</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Medicine</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Perception</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Survival</span>
-            </div>
+            <SavingThrow />
+            <Skill name="animal handling" />
+            <Skill name="insight" />
+            <Skill name="medicine" />
+            <Skill name="perception" />
+            <Skill name="survival" />
           </section>
         </section>
         <section>
+          <Attribute name="charisma" />
           <section>
-            <span>Charisma</span>
-            <ModValue />
-            <span>#</span>
-          </section>
-          <section>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Saving throws</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Deception</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Intimidation</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Performance</span>
-            </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <input type="checkbox" name="" id="" />
-              <span>#</span>
-              <span>Persuasion</span>
-            </div>
+            <SavingThrow />
+            <Skill name="deception" />
+            <Skill name="intimidation" />
+            <Skill name="performance" />
+            <Skill name="persuasion" />
           </section>
         </section>
       </section>

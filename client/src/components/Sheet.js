@@ -9,11 +9,13 @@ import Block7 from "./Sheet/Block7";
 import Block8 from "./Sheet/Block8";
 import Block9 from "./Sheet/Block9";
 import Block10 from "./Sheet/Block10";
+import Block11 from "./Sheet/Block11";
+import Block12 from "./Sheet/Block12";
+import Block13 from "./Sheet/Block13";
 
 const sheet = () => {
   return (
-    <div>
-      <h2>This is a sheet</h2>
+    <div className="sheet">
       <SheetHeader />
       <Block1 />
       <Block2 />
@@ -25,6 +27,9 @@ const sheet = () => {
       <Block8 />
       <Block9 />
       <Block10 />
+      <Block11 />
+      <Block12 />
+      <Block13 />
     </div>
   );
 };

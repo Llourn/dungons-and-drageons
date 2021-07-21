@@ -1,4 +1,4 @@
-import ModValue from "../ModValue";
+import ModText from "../ModText";
 
 const SheetHeader = () => {
   return (
@@ -7,39 +7,39 @@ const SheetHeader = () => {
         <b>Sheet header</b>
       </p>
       <section className="character-name">
-        <ModValue />
-        <span>Character Name</span>
+        <ModText />
+        <p className="label upper">Character Name</p>
       </section>
       <section className="character-details">
         <div>
-          <ModValue />
-          <span>Background</span>
+          <ModText />
+          <p className="label upper">Background</p>
         </div>
         <div>
-          <ModValue />
-          <span>Player Name</span>
+          <ModText />
+          <p className="label upper">Player Name</p>
         </div>
         <div>
-          <ModValue />
-          <span>Race</span>
+          <ModText />
+          <p className="label upper">Race</p>
         </div>
         <div>
-          <ModValue />
-          <span>Alignment</span>
+          <ModText />
+          <p className="label upper">Alignment</p>
         </div>
         <div>
-          <ModValue />
-          <span>Experience Points</span>
+          <ModText />
+          <p className="label upper">Experience Points</p>
         </div>
       </section>
       <section className="class-details">
         <div>
-          <ModValue />
-          <span>Class</span>
+          <ModText />
+          <p className="label upper">Class</p>
         </div>
         <div>
-          <ModValue />
-          <span>Level</span>
+          <ModText />
+          <p className="label upper">Level</p>
         </div>
       </section>
     </section>
