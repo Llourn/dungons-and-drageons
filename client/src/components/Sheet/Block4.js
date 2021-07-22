@@ -4,14 +4,15 @@ const Block4 = () => {
   return (
     <section>
       <p className="block-title">
-        <b>Block Four</b>
+        <b>Block Four A</b>
       </p>
-      <section>
-        <span>Attacks</span>
-        <p>
-          Create a DB of weapons that can be selected from so the
-          stats/properties autopopulate.
-        </p>
+      <section className="attacks">
+        <p>Attacks</p>
+        <div>
+          <p className="label upper">Name</p>
+          <p className="label upper">Atk Bonus</p>
+          <p className="label upper">Damage/Type</p>
+        </div>
         <div>
           <ModText />
           <ModText />
@@ -28,12 +29,13 @@ const Block4 = () => {
           <ModText />
         </div>
       </section>
-      <section>
+      <section className="equipment">
         <span>Equipment</span>
-        <p>
-          Create a DB of equipment that can be selected from so the
-          stats/properties autopopulate.
-        </p>
+        <div>
+          <p className="label upper">Name</p>
+          <p className="label upper">AC</p>
+          <p className="label upper">Add'l stats</p>
+        </div>
         <div>
           <ModText />
           <ModText />
@@ -50,24 +52,27 @@ const Block4 = () => {
           <ModText />
         </div>
       </section>
-      <section>
-        <span>CP</span>
-        <ModText />
-        <span>SP</span>
-        <ModText />
-        <span>EP</span>
-        <ModText />
-        <span>GP</span>
-        <ModText />
-        <span>PP</span>
-        <ModText />
-      </section>
-      <section>
-        <span>Feats</span>
-        <p>
-          Create a DB of feats that can be selected from so the stats/properties
-          autopopulate.
-        </p>
+      <section className="currency">
+        <div>
+          <span>CP</span>
+          <ModText />
+        </div>
+        <div>
+          <span>SP</span>
+          <ModText />
+        </div>
+        <div>
+          <span>EP</span>
+          <ModText />
+        </div>
+        <div>
+          <span>GP</span>
+          <ModText />
+        </div>
+        <div>
+          <span>PP</span>
+          <ModText />
+        </div>
       </section>
     </section>
   );

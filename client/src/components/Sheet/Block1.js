@@ -44,7 +44,7 @@ const Block1 = () => {
           </section>
         </section>
         <section>
-          <Attribute name="contritution" />
+          <Attribute name="contitution" />
           <section>
             <SavingThrow />
           </section>

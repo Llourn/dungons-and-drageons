@@ -1,7 +1,9 @@
+@use '../abstracts/colors';
+
 // Sheet styling
 // General
 .sheet {
-  columns: 14rem 10;
+  columns: 240px 10;
   column-gap: 3rem;
   column-rule: 1px dotted #ccc;
 
@@ -49,6 +51,9 @@
 // Block 1
 .passives-and-proficiency {
   columns: 2;
+  border-bottom: 1px dotted colors.$quinary;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .attributes {
@@ -69,6 +74,11 @@
   > * {
     display: grid;
     grid-template-columns: 2fr 3fr;
+    &:not(:last-child) {
+      border-bottom: 1px dotted colors.$quinary;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
   }
 }
 
@@ -116,5 +126,101 @@
   columns: 2;
   :first-child {
     column-span: all;
+  }
+}
+
+// Block 3
+.ac-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px dotted colors.$quinary;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  > * {
+    text-align: center;
+    > .mod-text-input {
+      width: 3ch;
+    }
+  }
+}
+
+.hp-block {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  > * {
+    flex: 1 1 100px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.hp-values {
+  display: flex;
+  justify-content: center;
+}
+
+.hit-dice {
+  > :not(:first-child) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// Block 4
+.attacks,
+.equipment {
+  > :not(:first-child) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.currency {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Block 5
+// Nothing here
+
+// Block 6
+.character-appearance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  border-bottom: 1px dotted colors.$quinary;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  > :first-child {
+    width: 100%;
+  }
+
+  > :not(:first-child) {
+    text-align: center;
+  }
+}
+
+.character-appearance-image {
+  img {
+    width: 100%;
+  }
+}
+
+// Block 11
+.spellcasting-info {
+  columns: 2;
+  > :first-child {
+    column-span: all;
+  }
+}
+
+//Block 13
+.spells-header {
+  display: flex;
+  justify-content: space-between;
+  > * {
+    text-align: center;
   }
 }

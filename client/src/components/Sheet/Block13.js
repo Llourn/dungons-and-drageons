@@ -1,23 +1,29 @@
+import ModText from "../ModText";
 const Block13 = () => {
   return (
     <section>
       <p className="block-title">
         <b>Block Thirteen</b>
       </p>
-      <section>
-        <span>Spell Level</span>
-        <span>Slots total</span>
-        <span>Slots expended</span>
+      <section className="spells-header">
+        <section>
+          <p className="label upper">Spell Level</p>
+          <ModText />
+          {/* <p>1</p> */}
+        </section>
+        <section>
+          <p className="label upper">Slots total</p>
+          <ModText />
+          {/* <p>3</p> */}
+        </section>
+        <section>
+          <p className="label upper">Slots expended</p>
+          <ModText />
+          {/* <p>0</p> */}
+        </section>
       </section>
       <section>
-        <section>
-          <span>[spell level]</span>
-          <span>[Total number of spell slots]</span>
-          <span>[Slots expended]</span>
-        </section>
-        <section>
-          <span>SPELL NAME</span>
-        </section>
+        <p>SPELL NAME</p>
       </section>
     </section>
   );

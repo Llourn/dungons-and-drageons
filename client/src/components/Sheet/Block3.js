@@ -6,30 +6,34 @@ const Block3 = () => {
       <p className="block-title">
         <b>Block Three</b>
       </p>
-      <section>
+      <section className="ac-block">
         <div>
-          <span>AC</span>
+          <p>AC</p>
           <ModText />
         </div>
         <div>
-          <span>Initiative</span>
+          <p>Initiative</p>
           <ModText />
         </div>
         <div>
-          <span>Speed</span>
+          <p>Speed</p>
           <ModText />
         </div>
       </section>
-      <section>
-        <div>
-          <span>Hit Points</span>
-          <ModText />/<ModText />
+      <section className="hp-block">
+        <div className="hp">
+          <p>Hit Points</p>
+          <div className="hp-values">
+            <ModText />
+            <span>/</span>
+            <ModText />
+          </div>
         </div>
         <div>
           <span>Temporary Hit Points</span>
           <ModText />
         </div>
-        <section>
+        <section className="hit-dice">
           <span>Hit Dice</span>
           <div>
             <ModText /> <span>Used</span>

@@ -7,11 +7,10 @@ const Block8 = () => {
       <p className="block-title">
         <b>Block Eight</b>
       </p>
-      <span>Allies & Organizations</span>
+      <p>Allies & Organizations</p>
       <Tiptap content="Click here to edit this section. 📝" />
-      <span>Symbol</span>
-      <ModText />
-      <div>IMAGE PLACEHOLDER</div>
+      <p>Enemies</p>
+      <Tiptap content="Click here to edit this section. 📝" />
     </section>
   );
 };
