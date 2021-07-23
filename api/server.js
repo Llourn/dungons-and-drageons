@@ -22,6 +22,11 @@ app.get("/characters", async (req, res) => {
   res.json(characters);
 });
 
+app.get("/characters/:id", async (req, res) => {
+  const character = await Character.findById(req.params.id);
+  res.json(character);
+});
+
 app.post("/character/new", (req, res) => {
   const character = new Character({
     characterName: req.body.characterName,

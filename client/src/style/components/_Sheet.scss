@@ -3,6 +3,8 @@
 // Sheet styling
 // General
 .sheet {
+  background: colors.$white;
+  padding: 1rem;
   columns: 240px 10;
   column-gap: 3rem;
   column-rule: 1px dotted #ccc;

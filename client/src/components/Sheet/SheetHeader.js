@@ -1,13 +1,13 @@
 import ModText from "../ModText";
 
-const SheetHeader = () => {
+const SheetHeader = ({ name }) => {
   return (
     <section className="sheet-header">
       <p className="block-title">
         <b>Sheet header</b>
       </p>
       <section className="character-name">
-        <ModText />
+        <ModText content={name} />
         <p className="label upper">Character Name</p>
       </section>
       <section className="character-details">

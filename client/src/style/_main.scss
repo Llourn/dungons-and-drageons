@@ -1,7 +1,11 @@
 @use "./abstracts/colors";
 
 body {
-  background-color: colors.$primary;
+  background-color: colors.$white;
+}
+
+.main {
+  background: colors.$white;
 }
 
 // section {

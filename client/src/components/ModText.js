@@ -1,13 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const ModText = () => {
+const ModText = ({ content }) => {
   const [toggle, setToggle] = useState(true);
-  const [name, setName] = useState("test");
+  const [name, setName] = useState(content || "?");
   const [originalName, setOriginalName] = useState("");
-
-  useEffect(() => {
-    // console.log("mount it!");
-  }, []);
 
   const handleFocus = (event) => event.target.select();
 

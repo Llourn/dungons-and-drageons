@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import SheetHeader from "./Sheet/SheetHeader";
 import Block1 from "./Sheet/Block1";
 import Block2 from "./Sheet/Block2";
@@ -13,27 +14,42 @@ import Block11 from "./Sheet/Block11";
 import Block12 from "./Sheet/Block12";
 import Block13 from "./Sheet/Block13";
 import Block4b from "./Sheet/Block4b";
+import useFetch from "../useFetch";
 
-const sheet = () => {
+const Sheet = () => {
+  const { id } = useParams();
+  const {
+    error,
+    isPending,
+    data: character,
+  } = useFetch(process.env.REACT_APP_API_BASE + "/characters/" + id);
   return (
-    <div className="sheet">
-      <SheetHeader />
-      <Block1 />
-      <Block2 />
-      <Block3 />
-      <Block4 />
-      <Block4b />
-      <Block5 />
-      <Block6 />
-      <Block7 />
-      <Block8 />
-      <Block9 />
-      <Block10 />
-      <Block11 />
-      <Block12 />
-      <Block13 />
+    <div>
+      {error && <div>{error}</div>}
+      {isPending && <div>Loading...</div>}
+
+      {character && (
+        <div className="sheet">
+          {console.log(character)}
+          <SheetHeader name={character.characterName} />
+          <Block1 />
+          <Block2 />
+          <Block3 />
+          <Block4 />
+          <Block4b />
+          <Block5 />
+          <Block6 />
+          <Block7 />
+          <Block8 />
+          <Block9 />
+          <Block10 />
+          <Block11 />
+          <Block12 />
+          <Block13 />
+        </div>
+      )}
     </div>
   );
 };
 
-export default sheet;
+export default Sheet;

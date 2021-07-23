@@ -10,7 +10,9 @@
 // Components
 @use './components/App';
 @use './components/Sheet';
-@use './components//ModText';
+@use './components/ModText';
+@use './components/NavBar';
+@use './components/Home';
 
 // Layout
 @use './main';

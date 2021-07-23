@@ -2,6 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
 
 body {
   // font-family: "Arvo", serif;
@@ -36,4 +37,12 @@ h1 {
 h2 {
   color: colors.$primary;
   font-size: 2rem;
+}
+
+a {
+  color: colors.$quinary;
+  text-decoration: none;
+  &:hover {
+    color: colors.$quaternary;
+  }
 }
