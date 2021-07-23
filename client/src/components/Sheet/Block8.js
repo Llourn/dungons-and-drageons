@@ -1,4 +1,3 @@
-import ModText from "../ModText";
 import Tiptap from "../Tiptap";
 
 const Block8 = () => {

@@ -4,23 +4,10 @@ import Tiptap from "./Tiptap";
 const ModTextArea = () => {
   const [toggle, setToggle] = useState(true);
   const [name, setName] = useState("test");
-  const [originalName, setOriginalName] = useState("");
 
   useEffect(() => {
     // console.log("mount it!");
   }, []);
-
-  const handleFocus = (event) => event.target.select();
-
-  const readName = () => {
-    return name.replace(/<br\s?\/?>/g, "\n");
-  };
-
-  const writeName = () => {
-    setToggle(true);
-    const newName = name.replace(/\r\n|\r|\n/g, "<br />");
-    setName(newName);
-  };
 
   return toggle ? (
     <p
@@ -28,7 +15,6 @@ const ModTextArea = () => {
       onDoubleClick={(event) => {
         console.log("CLICK");
         setName(name.replace(/<br\s?\/?>/g, "\n"));
-        setOriginalName(event.target.textContent);
         setToggle(false);
       }}
     >

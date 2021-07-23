@@ -1,0 +1,10 @@
+POST http://localhost:3001/character/new
+Content-Type: application/json
+
+{
+	"characterName": "Amanda"
+}
+
+### 
+
+GET http://localhost:3001/characters

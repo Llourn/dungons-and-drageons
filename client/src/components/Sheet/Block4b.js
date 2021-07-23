@@ -1,14 +1,13 @@
+import TipTap from "../Tiptap";
+
 const Block4b = () => {
   return (
-    <section>
+    <section className="feats">
       <p className="block-title">
         <b>Block Four B</b>
       </p>
-      <span>Feats</span>
-      <p>
-        Create a DB of feats that can be selected from so the stats/properties
-        autopopulate.
-      </p>
+      <p>Feats</p>
+      <TipTap content="Click here to edit this section. 📝" />
     </section>
   );
 };

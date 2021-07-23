@@ -1,5 +1,3 @@
-import ModText from "../ModText";
-import ModTextArea from "../ModTextArea";
 import Tiptap from "../Tiptap";
 
 const Block2 = () => {
