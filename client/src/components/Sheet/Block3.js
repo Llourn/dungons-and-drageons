@@ -1,6 +1,6 @@
 import ModText from "../ModText";
 
-const Block3 = () => {
+const Block3 = ({ character }) => {
   return (
     <section>
       <p className="block-title">

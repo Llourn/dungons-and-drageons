@@ -31,10 +31,10 @@ const Sheet = () => {
       {character && (
         <div className="sheet">
           {console.log(character)}
-          <SheetHeader name={character.characterName} />
-          <Block1 />
-          <Block2 />
-          <Block3 />
+          <SheetHeader character={character} />
+          <Block1 character={character} />
+          <Block2 character={character} />
+          <Block3 character={character} />
           <Block4 />
           <Block4b />
           <Block5 />

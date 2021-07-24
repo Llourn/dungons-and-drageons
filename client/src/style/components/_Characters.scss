@@ -1,0 +1,15 @@
+@use '../abstracts/colors';
+
+.character-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.new-character-form {
+  background: colors.$secondary;
+  display: none;
+  &.reveal {
+    display: block;
+  }
+}

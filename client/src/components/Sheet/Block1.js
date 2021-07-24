@@ -2,7 +2,7 @@ import Attribute from "./components/Attribute";
 import SavingThrow from "./components/SavingThrow";
 import Skill from "./components/Skill";
 
-const Block1 = () => {
+const Block1 = ({ character }) => {
   return (
     <section>
       <p className="block-title">
@@ -14,7 +14,12 @@ const Block1 = () => {
           <span>Proficiency</span>
         </div>
         <div>
-          <input type="checkbox" name="" id="" />
+          <input
+            type="checkbox"
+            defaultChecked={character.inspiration}
+            name=""
+            id=""
+          />
           <span>Inspiration</span>
         </div>
         <div>
@@ -28,57 +33,165 @@ const Block1 = () => {
       </section>
       <section className="attributes">
         <section>
-          <Attribute name="strength" />
+          <Attribute name="strength" value={character.strength} />
           <section>
-            <SavingThrow />
-            <Skill name="athletics" />
+            <SavingThrow
+              proficient={character.strengthSavingThrowProficient}
+              attributeValue={character.strength}
+            />
+            <Skill
+              name="athletics"
+              expert={character.athleticsExpert}
+              proficient={character.athleticsProficient}
+              attribute={character.strength}
+            />
           </section>
         </section>
         <section>
-          <Attribute name="dexterity" />
+          <Attribute name="dexterity" value={character.dexterity} />
           <section>
-            <SavingThrow />
-            <Skill name="acrobatics" />
-            <Skill name="sleight of hand" />
-            <Skill name="stealth" />
+            <SavingThrow
+              proficient={character.dexteritySavingThrowProficient}
+              attributeValue={character.dexterity}
+            />
+            <Skill
+              name="acrobatics"
+              expert={character.acrobaticsExpert}
+              proficient={character.acrobaticsProficient}
+              attribute={character.dexterity}
+            />
+            <Skill
+              name="sleight of hand"
+              expert={character.sleightOfHandExpert}
+              proficient={character.sleightOfHandProficient}
+              attribute={character.dexterity}
+            />
+            <Skill
+              name="stealth"
+              expert={character.stealthExpert}
+              proficient={character.stealthProficient}
+              attribute={character.dexterity}
+            />
           </section>
         </section>
         <section>
-          <Attribute name="contitution" />
+          <Attribute name="contitution" value={character.constitution} />
           <section>
-            <SavingThrow />
+            <SavingThrow
+              proficient={character.constitutionSavingThrowProficient}
+              attributeValue={character.constitution}
+            />
           </section>
         </section>
         <section>
-          <Attribute name="intelligence" />
+          <Attribute name="intelligence" value={character.intelligence} />
           <section>
-            <SavingThrow />
-            <Skill name="arcana" />
-            <Skill name="history" />
-            <Skill name="investigation" />
-            <Skill name="nature" />
-            <Skill name="religion" />
+            <SavingThrow
+              proficient={character.intelligenceSavingThrowProficient}
+              attributeValue={character.intelligence}
+            />
+            <Skill
+              name="arcana"
+              expert={character.arcanaExpert}
+              proficient={character.arcanaProficient}
+              attribute={character.intelligence}
+            />
+            <Skill
+              name="history"
+              expert={character.historyExpert}
+              proficient={character.historyProficient}
+              attribute={character.intelligence}
+            />
+            <Skill
+              name="investigation"
+              expert={character.investigationExpert}
+              proficient={character.investigationProficient}
+              attribute={character.intelligence}
+            />
+            <Skill
+              name="nature"
+              expert={character.natureExpert}
+              proficient={character.natureProficient}
+              attribute={character.intelligence}
+            />
+            <Skill
+              name="religion"
+              expert={character.religionExpert}
+              proficient={character.religionProficient}
+              attribute={character.intelligence}
+            />
           </section>
         </section>
         <section>
-          <Attribute name="wisdom" />
+          <Attribute name="wisdom" value={character.wisdom} />
           <section>
-            <SavingThrow />
-            <Skill name="animal handling" />
-            <Skill name="insight" />
-            <Skill name="medicine" />
-            <Skill name="perception" />
-            <Skill name="survival" />
+            <SavingThrow
+              proficient={character.wisdomSavingThrowProficient}
+              attributeValue={character.wisdom}
+            />
+            <Skill
+              name="animal handling"
+              expert={character.animalHandlingExpert}
+              proficient={character.animalHandlingProficient}
+              attribute={character.wisdom}
+            />
+            <Skill
+              name="insight"
+              expert={character.insightExpert}
+              proficient={character.insightProficient}
+              attribute={character.wisdom}
+            />
+            <Skill
+              name="medicine"
+              expert={character.medicineExpert}
+              proficient={character.medicineProficient}
+              attribute={character.wisdom}
+            />
+            <Skill
+              name="perception"
+              expert={character.perceptionExpert}
+              proficient={character.perceptionProficient}
+              attribute={character.wisdom}
+            />
+            <Skill
+              name="survival"
+              expert={character.survivalExpert}
+              proficient={character.survivalProficient}
+              attribute={character.wisdom}
+            />
           </section>
         </section>
         <section>
-          <Attribute name="charisma" />
+          <Attribute name="charisma" value={character.charisma} />
           <section>
-            <SavingThrow />
-            <Skill name="deception" />
-            <Skill name="intimidation" />
-            <Skill name="performance" />
-            <Skill name="persuasion" />
+            <SavingThrow
+              proficient={character.charismaSavingThrowProficient}
+              attributeValue={character.charisma}
+            />
+            <Skill
+              name="deception"
+              expert={character.deceptionExpert}
+              proficient={character.deceptionProficient}
+              attribute={character.charisma}
+            />
+            <Skill
+              name="intimidation"
+              expert={character.intimidationExpert}
+              proficient={character.intimidationProficient}
+              attribute={character.charisma}
+            />
+            <Skill
+              name="performance"
+              expert={character.performanceExpert}
+              proficient={character.performanceProficient}
+              attribute={character.charisma}
+            />
+            <Skill
+              name="persuasion"
+              expert={character.persuasionExpert}
+              proficient={character.persuasionProficient}
+              attribute={character.charisma}
+            />
           </section>
         </section>
       </section>

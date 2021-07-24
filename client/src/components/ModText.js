@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ModText = ({ content }) => {
   const [toggle, setToggle] = useState(true);
-  const [name, setName] = useState(content || "?");
+  const [name, setName] = useState("?");
   const [originalName, setOriginalName] = useState("");
 
   const handleFocus = (event) => event.target.select();
+
+  useEffect(() => {
+    setName(content);
+  }, [content]);
 
   return toggle ? (
     <p
