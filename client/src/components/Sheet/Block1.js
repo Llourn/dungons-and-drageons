@@ -1,8 +1,64 @@
+import { useState, useEffect } from "react";
 import Attribute from "./components/Attribute";
 import SavingThrow from "./components/SavingThrow";
 import Skill from "./components/Skill";
 
-const Block1 = ({ character }) => {
+const Block1 = ({ character, updateCharacter }) => {
+  const [proficiency, setProficiency] = useState(0);
+  const [strengthModifier, setStrengthModifier] = useState(
+    Math.floor((character.strength - 10) / 2)
+  );
+  const [dexterityModifier, setDexterityModifier] = useState(
+    Math.floor((character.dexterity - 10) / 2)
+  );
+  const [constitutionModifier, setConstitutionModifier] = useState(
+    Math.floor((character.constitution - 10) / 2)
+  );
+  const [intelligenceModifier, setIntelligenceModifier] = useState(
+    Math.floor((character.intelligence - 10) / 2)
+  );
+  const [wisdomModifier, setWisdomModifier] = useState(
+    Math.floor((character.wisdom - 10) / 2)
+  );
+  const [charismaModifier, setCharismaModifier] = useState(
+    Math.floor((character.charisma - 10) / 2)
+  );
+
+  useEffect(() => {
+    const calculateProficiency = () => {
+      const level = character.level;
+      if (level <= 4) {
+        return 2;
+      } else if (level >= 5 && level <= 8) {
+        return 3;
+      } else if (level >= 9 && level <= 12) {
+        return 4;
+      } else if (level >= 13 && level <= 16) {
+        return 5;
+      } else {
+        return 6;
+      }
+    };
+    setProficiency(calculateProficiency());
+  }, [character.level]);
+
+  const calculateModifier = (value) => {
+    return Math.floor((value - 10) / 2);
+  };
+
+  const updateStrengthAttribute = (value) => {
+    setStrengthModifier(calculateModifier(value));
+    updateCharacter({ strength: value });
+  };
+
+  const updateAthleticsProficiency = (value) => {
+    updateCharacter({ athleticsProficient: value });
+  };
+
+  const updateAthleticsExpertise = (value) => {
+    updateCharacter({ athleticsExpert: value });
+  };
+
   return (
     <section>
       <p className="block-title">
@@ -10,13 +66,14 @@ const Block1 = ({ character }) => {
       </p>
       <section className="passives-and-proficiency">
         <div>
-          <span>#</span>
+          <span>{proficiency}</span>
           <span>Proficiency</span>
         </div>
         <div>
           <input
             type="checkbox"
             defaultChecked={character.inspiration}
+            onChange={(e) => updateCharacter({ inspiration: e.target.checked })}
             name=""
             id=""
           />
@@ -24,7 +81,7 @@ const Block1 = ({ character }) => {
         </div>
         <div>
           <span>Passive Perception</span>
-          <span>#</span>
+          <span>{}</span>
         </div>
         <div>
           <span>Passive Insight</span>
@@ -33,7 +90,12 @@ const Block1 = ({ character }) => {
       </section>
       <section className="attributes">
         <section>
-          <Attribute name="strength" value={character.strength} />
+          <Attribute
+            name="strength"
+            value={character.strength}
+            modifier={strengthModifier}
+            updateValue={updateStrengthAttribute}
+          />
           <section>
             <SavingThrow
               proficient={character.strengthSavingThrowProficient}
@@ -43,7 +105,9 @@ const Block1 = ({ character }) => {
               name="athletics"
               expert={character.athleticsExpert}
               proficient={character.athleticsProficient}
-              attribute={character.strength}
+              modifier={strengthModifier}
+              updateProf={updateAthleticsProficiency}
+              updateExp={updateAthleticsExpertise}
             />
           </section>
         </section>

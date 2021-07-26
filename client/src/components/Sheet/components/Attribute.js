@@ -1,15 +1,11 @@
 import ModText from "../../ModText";
 
-const Attribute = ({ name, value }) => {
+const Attribute = ({ name, value, modifier, updateValue }) => {
   return (
     <section className="attribute">
       <p className="label upper">{name}</p>
-      <ModText content={value} />
-
-      {console.log(typeof value)}
-      {console.log(typeof value === "number")}
-
-      <p>{typeof value === "number" ? Math.floor((value - 10) / 2) : 0}</p>
+      <ModText content={value} updateValue={updateValue} />
+      <p>{typeof modifier === "number" ? modifier : 0}</p>
     </section>
   );
 };

@@ -5,7 +5,7 @@
   "race": "Halfling",
   "alignment": "Chaotic Good",
   "experiencePoints": 43123,
-  "class": "Rogue",
+  "characterClass": "Rogue",
   "level": 13,
   "inspiration": true,
   "strength": 13,

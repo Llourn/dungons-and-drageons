@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const ModText = ({ content }) => {
+const ModText = ({ content, updateValue }) => {
   const [toggle, setToggle] = useState(true);
   const [name, setName] = useState("?");
   const [originalName, setOriginalName] = useState("");
@@ -35,6 +35,7 @@ const ModText = ({ content }) => {
         if (event.key === "Enter" || event.key === "Tab") {
           // setName(event.target.value);
           setToggle(true);
+          updateValue(name);
           event.preventDefault();
           event.stopPropagation();
         } else if (event.key === "Escape") {

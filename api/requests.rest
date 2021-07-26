@@ -8,3 +8,12 @@ Content-Type: application/json
 ### 
 
 GET http://localhost:3001/characters
+
+### 
+
+PUT http://localhost:3001/character/characterName/60fc95ea04384ac41ca08b3c
+Content-Type: application/json
+
+{
+	"characterName": "Homestar"
+}

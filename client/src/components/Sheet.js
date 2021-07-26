@@ -15,24 +15,50 @@ import Block12 from "./Sheet/Block12";
 import Block13 from "./Sheet/Block13";
 import Block4b from "./Sheet/Block4b";
 import useFetch from "../useFetch";
+import { useState, useEffect } from "react";
 
 const Sheet = () => {
+  const [character, setCharacter] = useState(null);
   const { id } = useParams();
   const {
     error,
     isPending,
-    data: character,
+    data: characterData,
   } = useFetch(process.env.REACT_APP_API_BASE + "/characters/" + id);
+
+  useEffect(() => {
+    setCharacter(characterData);
+  }, [characterData]);
+
+  const updateCharacter = async (property) => {
+    console.log(property);
+    const data = await fetch(
+      `${process.env.REACT_APP_API_BASE}/character/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          ...property,
+        }),
+      }
+    ).then((res) => res.json());
+    console.log(data);
+    setCharacter(data);
+  };
+
   return (
     <div>
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
-
       {character && (
         <div className="sheet">
-          {console.log(character)}
-          <SheetHeader character={character} />
-          <Block1 character={character} />
+          <SheetHeader
+            character={character}
+            updateCharacter={updateCharacter}
+          />
+          <Block1 character={character} updateCharacter={updateCharacter} />
           <Block2 character={character} />
           <Block3 character={character} />
           <Block4 />

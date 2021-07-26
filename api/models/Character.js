@@ -25,9 +25,9 @@ const CharacterSchema = new Schema({
   experiencePoints: {
     type: Number,
   },
-  class: {
+  characterClass: {
     type: String,
-    default: "[Class]",
+    default: "[Character Class]",
   },
   level: {
     type: Number,
