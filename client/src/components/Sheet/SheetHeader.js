@@ -82,7 +82,7 @@ const SheetHeader = ({ character, updateCharacter }) => {
       <section className="class-details">
         <div>
           <ModText
-            content={character.CharacterClass}
+            content={character.characterClass}
             updateValue={updateCharacterCharacterClass}
           />
           <p className="label upper">Class</p>

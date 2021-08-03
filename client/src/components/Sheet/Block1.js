@@ -51,12 +51,29 @@ const Block1 = ({ character, updateCharacter }) => {
     updateCharacter({ strength: value });
   };
 
-  const updateAthleticsProficiency = (value) => {
-    updateCharacter({ athleticsProficient: value });
+  const updateDexterityAttribute = (value) => {
+    setDexterityModifier(calculateModifier(value));
+    updateCharacter({ dexterity: value });
   };
 
-  const updateAthleticsExpertise = (value) => {
-    updateCharacter({ athleticsExpert: value });
+  const updateConstitutionAttribute = (value) => {
+    setConstitutionModifier(calculateModifier(value));
+    updateCharacter({ constitution: value });
+  };
+
+  const updateIntelligenceAttribute = (value) => {
+    setIntelligenceModifier(calculateModifier(value));
+    updateCharacter({ intelligence: value });
+  };
+
+  const updateWisdomAttribute = (value) => {
+    setWisdomModifier(calculateModifier(value));
+    updateCharacter({ wisdom: value });
+  };
+
+  const updateCharismaAttribute = (value) => {
+    setCharismaModifier(calculateModifier(value));
+    updateCharacter({ charisma: value });
   };
 
   return (
@@ -103,16 +120,24 @@ const Block1 = ({ character, updateCharacter }) => {
             />
             <Skill
               name="athletics"
-              expert={character.athleticsExpert}
-              proficient={character.athleticsProficient}
               modifier={strengthModifier}
-              updateProf={updateAthleticsProficiency}
-              updateExp={updateAthleticsExpertise}
+              skill={{
+                athleticsSkill: {
+                  proficient: character.athleticsSkill.proficient,
+                  expert: character.athleticsSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
           </section>
         </section>
         <section>
-          <Attribute name="dexterity" value={character.dexterity} />
+          <Attribute
+            name="dexterity"
+            value={character.dexterity}
+            modifier={dexterityModifier}
+            updateValue={updateDexterityAttribute}
+          />
           <section>
             <SavingThrow
               proficient={character.dexteritySavingThrowProficient}
@@ -120,26 +145,46 @@ const Block1 = ({ character, updateCharacter }) => {
             />
             <Skill
               name="acrobatics"
-              expert={character.acrobaticsExpert}
-              proficient={character.acrobaticsProficient}
-              attribute={character.dexterity}
+              modifier={dexterityModifier}
+              skill={{
+                acrobaticsSkill: {
+                  proficient: character.acrobaticsSkill.proficient,
+                  expert: character.acrobaticsSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="sleight of hand"
-              expert={character.sleightOfHandExpert}
-              proficient={character.sleightOfHandProficient}
-              attribute={character.dexterity}
+              modifier={dexterityModifier}
+              skill={{
+                sleightOfHandSkill: {
+                  proficient: character.sleightOfHandSkill.proficient,
+                  expert: character.sleightOfHandSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="stealth"
-              expert={character.stealthExpert}
-              proficient={character.stealthProficient}
-              attribute={character.dexterity}
+              modifier={dexterityModifier}
+              skill={{
+                stealthSkill: {
+                  proficient: character.stealthSkill.proficient,
+                  expert: character.stealthSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
           </section>
         </section>
         <section>
-          <Attribute name="contitution" value={character.constitution} />
+          <Attribute
+            name="constitution"
+            value={character.constitution}
+            modifier={constitutionModifier}
+            updateValue={updateConstitutionAttribute}
+          />
           <section>
             <SavingThrow
               proficient={character.constitutionSavingThrowProficient}
@@ -148,7 +193,12 @@ const Block1 = ({ character, updateCharacter }) => {
           </section>
         </section>
         <section>
-          <Attribute name="intelligence" value={character.intelligence} />
+          <Attribute
+            name="intelligence"
+            value={character.intelligence}
+            modifier={intelligenceModifier}
+            updateValue={updateIntelligenceAttribute}
+          />
           <section>
             <SavingThrow
               proficient={character.intelligenceSavingThrowProficient}
@@ -156,38 +206,68 @@ const Block1 = ({ character, updateCharacter }) => {
             />
             <Skill
               name="arcana"
-              expert={character.arcanaExpert}
-              proficient={character.arcanaProficient}
-              attribute={character.intelligence}
+              modifier={intelligenceModifier}
+              skill={{
+                arcanaSkill: {
+                  proficient: character.arcanaSkill.proficient,
+                  expert: character.arcanaSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="history"
-              expert={character.historyExpert}
-              proficient={character.historyProficient}
-              attribute={character.intelligence}
+              modifier={intelligenceModifier}
+              skill={{
+                historySkill: {
+                  proficient: character.historySkill.proficient,
+                  expert: character.historySkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="investigation"
-              expert={character.investigationExpert}
-              proficient={character.investigationProficient}
-              attribute={character.intelligence}
+              modifier={intelligenceModifier}
+              skill={{
+                investigationSkill: {
+                  proficient: character.investigationSkill.proficient,
+                  expert: character.investigationSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="nature"
-              expert={character.natureExpert}
-              proficient={character.natureProficient}
-              attribute={character.intelligence}
+              modifier={intelligenceModifier}
+              skill={{
+                natureSkill: {
+                  proficient: character.natureSkill.proficient,
+                  expert: character.natureSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="religion"
-              expert={character.religionExpert}
-              proficient={character.religionProficient}
-              attribute={character.intelligence}
+              modifier={intelligenceModifier}
+              skill={{
+                religionSkill: {
+                  proficient: character.religionSkill.proficient,
+                  expert: character.religionSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
           </section>
         </section>
         <section>
-          <Attribute name="wisdom" value={character.wisdom} />
+          <Attribute
+            name="wisdom"
+            value={character.wisdom}
+            modifier={wisdomModifier}
+            updateValue={updateWisdomAttribute}
+          />
           <section>
             <SavingThrow
               proficient={character.wisdomSavingThrowProficient}
@@ -195,38 +275,68 @@ const Block1 = ({ character, updateCharacter }) => {
             />
             <Skill
               name="animal handling"
-              expert={character.animalHandlingExpert}
-              proficient={character.animalHandlingProficient}
-              attribute={character.wisdom}
+              modifier={wisdomModifier}
+              skill={{
+                animalHandlingSkill: {
+                  proficient: character.animalHandlingSkill.proficient,
+                  expert: character.animalHandlingSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="insight"
-              expert={character.insightExpert}
-              proficient={character.insightProficient}
-              attribute={character.wisdom}
+              modifier={wisdomModifier}
+              skill={{
+                insightSkill: {
+                  proficient: character.insightSkill.proficient,
+                  expert: character.insightSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="medicine"
-              expert={character.medicineExpert}
-              proficient={character.medicineProficient}
-              attribute={character.wisdom}
+              modifier={wisdomModifier}
+              skill={{
+                medicineSkill: {
+                  proficient: character.medicineSkill.proficient,
+                  expert: character.medicineSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="perception"
-              expert={character.perceptionExpert}
-              proficient={character.perceptionProficient}
-              attribute={character.wisdom}
+              modifier={wisdomModifier}
+              skill={{
+                perceptionSkill: {
+                  proficient: character.perceptionSkill.proficient,
+                  expert: character.perceptionSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="survival"
-              expert={character.survivalExpert}
-              proficient={character.survivalProficient}
-              attribute={character.wisdom}
+              modifier={wisdomModifier}
+              skill={{
+                survivalSkill: {
+                  proficient: character.survivalSkill.proficient,
+                  expert: character.survivalSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
           </section>
         </section>
         <section>
-          <Attribute name="charisma" value={character.charisma} />
+          <Attribute
+            name="charisma"
+            value={character.charisma}
+            modifier={charismaModifier}
+            updateValue={updateCharismaAttribute}
+          />
           <section>
             <SavingThrow
               proficient={character.charismaSavingThrowProficient}
@@ -234,27 +344,47 @@ const Block1 = ({ character, updateCharacter }) => {
             />
             <Skill
               name="deception"
-              expert={character.deceptionExpert}
-              proficient={character.deceptionProficient}
-              attribute={character.charisma}
+              modifier={charismaModifier}
+              skill={{
+                deceptionSkill: {
+                  proficient: character.deceptionSkill.proficient,
+                  expert: character.deceptionSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="intimidation"
-              expert={character.intimidationExpert}
-              proficient={character.intimidationProficient}
-              attribute={character.charisma}
+              modifier={charismaModifier}
+              skill={{
+                intimidationSkill: {
+                  proficient: character.intimidationSkill.proficient,
+                  expert: character.intimidationSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="performance"
-              expert={character.performanceExpert}
-              proficient={character.performanceProficient}
-              attribute={character.charisma}
+              modifier={charismaModifier}
+              skill={{
+                performanceSkill: {
+                  proficient: character.performanceSkill.proficient,
+                  expert: character.performanceSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
             <Skill
               name="persuasion"
-              expert={character.persuasionExpert}
-              proficient={character.persuasionProficient}
-              attribute={character.charisma}
+              modifier={charismaModifier}
+              skill={{
+                persuasionSkill: {
+                  proficient: character.persuasionSkill.proficient,
+                  expert: character.persuasionSkill.expert,
+                },
+              }}
+              updateCharacter={updateCharacter}
             />
           </section>
         </section>

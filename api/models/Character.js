@@ -24,6 +24,7 @@ const CharacterSchema = new Schema({
   },
   experiencePoints: {
     type: Number,
+    default: 0,
   },
   characterClass: {
     type: String,
@@ -85,150 +86,6 @@ const CharacterSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  athleticsProficient: {
-    type: Boolean,
-    default: false,
-  },
-  acrobaticsProficient: {
-    type: Boolean,
-    default: false,
-  },
-  sleightOfHandProficient: {
-    type: Boolean,
-    default: false,
-  },
-  stealthProficient: {
-    type: Boolean,
-    default: false,
-  },
-  arcanaProficient: {
-    type: Boolean,
-    default: false,
-  },
-  historyProficient: {
-    type: Boolean,
-    default: false,
-  },
-  investigationProficient: {
-    type: Boolean,
-    default: false,
-  },
-  natureProficient: {
-    type: Boolean,
-    default: false,
-  },
-  religionProficient: {
-    type: Boolean,
-    default: false,
-  },
-  animalHandlingProficient: {
-    type: Boolean,
-    default: false,
-  },
-  insightProficient: {
-    type: Boolean,
-    default: false,
-  },
-  medicineProficient: {
-    type: Boolean,
-    default: false,
-  },
-  perceptionProficient: {
-    type: Boolean,
-    default: false,
-  },
-  survivalProficient: {
-    type: Boolean,
-    default: false,
-  },
-  deceptionProficient: {
-    type: Boolean,
-    default: false,
-  },
-  intimidationProficient: {
-    type: Boolean,
-    default: false,
-  },
-  performanceProficient: {
-    type: Boolean,
-    default: false,
-  },
-  persuasionProficient: {
-    type: Boolean,
-    default: false,
-  },
-  athleticsExpert: {
-    type: Boolean,
-    default: false,
-  },
-  acrobaticsExpert: {
-    type: Boolean,
-    default: false,
-  },
-  sleightOfHandExpert: {
-    type: Boolean,
-    default: false,
-  },
-  stealthExpert: {
-    type: Boolean,
-    default: false,
-  },
-  arcanaExpert: {
-    type: Boolean,
-    default: false,
-  },
-  historyExpert: {
-    type: Boolean,
-    default: false,
-  },
-  investigationExpert: {
-    type: Boolean,
-    default: false,
-  },
-  natureExpert: {
-    type: Boolean,
-    default: false,
-  },
-  religionExpert: {
-    type: Boolean,
-    default: false,
-  },
-  animalHandlingExpert: {
-    type: Boolean,
-    default: false,
-  },
-  insightExpert: {
-    type: Boolean,
-    default: false,
-  },
-  medicineExpert: {
-    type: Boolean,
-    default: false,
-  },
-  perceptionExpert: {
-    type: Boolean,
-    default: false,
-  },
-  survivalExpert: {
-    type: Boolean,
-    default: false,
-  },
-  deceptionExpert: {
-    type: Boolean,
-    default: false,
-  },
-  intimidationExpert: {
-    type: Boolean,
-    default: false,
-  },
-  performanceExpert: {
-    type: Boolean,
-    default: false,
-  },
-  persuasionExpert: {
-    type: Boolean,
-    default: false,
-  },
   racialTraits: {
     type: String,
     default: "[Racial Traits]",
@@ -264,6 +121,132 @@ const CharacterSchema = new Schema({
   toolsAndOtherProficiencies: {
     type: String,
     default: "[Tools and Other Proficiencies]",
+  },
+  acrobaticsSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  animalHandlingSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  arcanaSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  athleticsSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  deceptionSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  historySkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  insightSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  intimidationSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  investigationSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  medicineSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  natureSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  perceptionSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  performanceSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  persuasionSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  religionSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  sleightOfHandSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  stealthSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
+  },
+  survivalSkill: {
+    type: Object,
+    default: {
+      proficient: false,
+      expert: false,
+    },
   },
 });
 

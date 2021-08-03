@@ -1,39 +1,66 @@
 import { useEffect, useState } from "react";
 
-const Skill = ({
-  name,
-  expert,
-  proficient,
-  modifier,
-  updateProf,
-  updateExp,
-}) => {
+const Skill = ({ name, modifier, skill, updateCharacter }) => {
   const [skillModifier, setSkillModifier] = useState(0);
+  const [skillObj, setSkillObj] = useState(null);
+  const skillName = `${camelize(name)}Skill`;
 
   useEffect(() => {
-    console.log("UPDATE SKILL");
+    setSkillObj(skill);
+  }, [skill]);
+
+  useEffect(() => {
     let bonus = 0;
-    if (expert) {
+    if (skillObj && skillObj[skillName].expert) {
       bonus = 4;
-    } else if (proficient) {
+    } else if (skillObj && skillObj[skillName].proficient) {
       bonus = 2;
     }
     setSkillModifier(bonus + modifier);
-  }, [proficient, expert, modifier]);
+  }, [skillObj, modifier, skillName]);
 
-  return (
+  function camelize(str) {
+    return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+      if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+      return index === 0 ? match.toLowerCase() : match.toUpperCase();
+    });
+  }
+
+  const updateExpertise = (isExpert) => {
+    console.log(skillObj);
+    setSkillObj(() => {
+      let newSkill = Object.assign({}, skillObj);
+      newSkill[skillName].expert = isExpert;
+      return newSkill;
+    });
+    console.log(skillObj);
+    updateCharacter(skillObj);
+  };
+
+  const updateProficiency = (isProficient) => {
+    console.log(skillObj);
+    setSkillObj(() => {
+      let newSkill = Object.assign({}, skillObj);
+      newSkill[skillName].proficient = isProficient;
+      return newSkill;
+    });
+    console.log(skillObj);
+    updateCharacter(skillObj);
+  };
+
+  return skillObj ? (
     <div className="skill">
       <input
         type="checkbox"
-        defaultChecked={expert}
-        onChange={(e) => updateExp(e.target.checked)}
+        defaultChecked={skillObj[skillName].expert}
+        onClick={(e) => updateExpertise(e.target.checked)}
         name=""
         id=""
       />
       <input
         type="checkbox"
-        defaultChecked={proficient}
-        onChange={(e) => updateProf(e.target.checked)}
+        defaultChecked={skillObj[skillName].proficient}
+        onClick={(e) => updateProficiency(e.target.checked)}
         name=""
         id=""
       />
@@ -44,6 +71,8 @@ const Skill = ({
       )}
       <span>{name}</span>
     </div>
+  ) : (
+    <p>...</p>
   );
 };
 
