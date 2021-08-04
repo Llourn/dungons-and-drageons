@@ -15,7 +15,7 @@ import Block12 from "./Sheet/Block12";
 import Block13 from "./Sheet/Block13";
 import Block4b from "./Sheet/Block4b";
 import useFetch from "../useFetch";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const Sheet = () => {
   const [character, setCharacter] = useState(null);
@@ -30,25 +30,28 @@ const Sheet = () => {
     setCharacter(characterData);
   }, [characterData]);
 
-  const updateCharacter = async (property) => {
-    console.log(property);
-    const data = await fetch(
-      `${process.env.REACT_APP_API_BASE}/character/${id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          ...property,
-        }),
-      }
-    )
-      .then((res) => res.json())
-      .catch((err) => console.log(err));
-    console.log(data);
-    setCharacter(data);
-  };
+  const updateCharacter = useCallback(
+    async (property) => {
+      console.log(property);
+      const data = await fetch(
+        `${process.env.REACT_APP_API_BASE}/character/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            ...property,
+          }),
+        }
+      )
+        .then((res) => res.json())
+        .catch((err) => console.log(err));
+      console.log(data);
+      setCharacter(data);
+    },
+    [id]
+  );
 
   return (
     <div>

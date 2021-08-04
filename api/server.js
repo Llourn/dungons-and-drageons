@@ -58,30 +58,26 @@ app.put("/character/:id", async (req, res) => {
   if (req.body.wisdom) updates.wisdom = req.body.wisdom;
   if (req.body.charisma) updates.charisma = req.body.charisma;
 
-  if (req.body.strengthSavingThrowproficient !== undefined)
-    updates.strengthSavingThrowproficient =
-      req.body.strengthSavingThrowproficient;
-  if (req.body.dexteritySavingThrowproficient !== undefined)
-    updates.dexteritySavingThrowproficient =
-      req.body.dexteritySavingThrowproficient;
-  if (req.body.constitutionSavingThrowproficient !== undefined)
-    updates.constitutionSavingThrowproficient =
-      req.body.constitutionSavingThrowproficient;
-  if (req.body.intelligenceSavingThrowproficient !== undefined)
-    updates.intelligenceSavingThrowproficient =
-      req.body.intelligenceSavingThrowproficient;
-  if (req.body.wisdomSavingThrowproficient !== undefined)
-    updates.wisdomSavingThrowproficient = req.body.wisdomSavingThrowproficient;
-  if (req.body.charismaSavingThrowproficient !== undefined)
-    updates.charismaSavingThrowproficient =
-      req.body.charismaSavingThrowproficient;
+  if (req.body.strengthSavingThrowProficient !== undefined)
+    updates.strengthSavingThrowProficient =
+      req.body.strengthSavingThrowProficient;
+  if (req.body.dexteritySavingThrowProficient !== undefined)
+    updates.dexteritySavingThrowProficient =
+      req.body.dexteritySavingThrowProficient;
+  if (req.body.constitutionSavingThrowProficient !== undefined)
+    updates.constitutionSavingThrowProficient =
+      req.body.constitutionSavingThrowProficient;
+  if (req.body.intelligenceSavingThrowProficient !== undefined)
+    updates.intelligenceSavingThrowProficient =
+      req.body.intelligenceSavingThrowProficient;
+  if (req.body.wisdomSavingThrowProficient !== undefined)
+    updates.wisdomSavingThrowProficient = req.body.wisdomSavingThrowProficient;
+  if (req.body.charismaSavingThrowProficient !== undefined)
+    updates.charismaSavingThrowProficient =
+      req.body.charismaSavingThrowProficient;
   if (req.body.athleticsSkill) updates.athleticsSkill = req.body.athleticsSkill;
-  if (req.body.acrobaticsSkill) {
-    console.log("hola bitches!");
+  if (req.body.acrobaticsSkill)
     updates.acrobaticsSkill = req.body.acrobaticsSkill;
-    console.log(updates);
-    console.log(updates.acrobaticsSkill);
-  }
   if (req.body.sleightOfHandSkill)
     updates.sleightOfHandSkill = req.body.sleightOfHandSkill;
   if (req.body.stealthSkill) updates.stealthSkill = req.body.stealthSkill;
@@ -121,6 +117,8 @@ app.put("/character/:id", async (req, res) => {
   if (req.body.languages) updates.languages = req.body.languages;
   if (req.body.toolsAndOtherProficiencies)
     updates.toolsAndOtherProficiencies = req.body.toolsAndOtherProficiencies;
+  if (req.body.jackOfAllTrades !== undefined)
+    updates.jackOfAllTrades = req.body.jackOfAllTrades;
 
   const character = await Character.findByIdAndUpdate(
     { _id: req.params.id },

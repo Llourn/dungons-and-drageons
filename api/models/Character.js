@@ -248,6 +248,10 @@ const CharacterSchema = new Schema({
       expert: false,
     },
   },
+  jackOfAllTrades: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const Character = mongoose.model("Character", CharacterSchema);

@@ -52,7 +52,10 @@
 
 // Block 1
 .passives-and-proficiency {
-  columns: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
   border-bottom: 1px dotted colors.$quinary;
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
@@ -98,11 +101,11 @@
     transform: translateY(-50%);
   }
   > :nth-child(2) {
-    left: 3.5ch;
+    left: 4.5ch;
   }
 
   > :nth-child(3) {
-    left: 5ch;
+    left: 7ch;
   }
 }
 
@@ -115,11 +118,11 @@
     transform: translateY(-50%);
   }
   > :nth-child(3) {
-    left: 7.5ch;
+    left: 8.5ch;
   }
 
   > :nth-child(4) {
-    left: 9ch;
+    left: 11ch;
   }
 }
 

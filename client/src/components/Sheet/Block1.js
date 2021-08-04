@@ -76,17 +76,32 @@ const Block1 = ({ character, updateCharacter }) => {
     updateCharacter({ charisma: value });
   };
 
+  const calculatePassivePerception = () => {
+    let value = 10;
+    value += wisdomModifier;
+    if (character.jackOfAllTrades) value += Math.floor(proficiency / 2);
+    if (character.perceptionSkill.proficient) value += proficiency;
+    //TODO: work out how to add in observant feat bonus.
+    return value;
+  };
+
+  const calculatePassiveInsight = () => {
+    let value = 10;
+    value += wisdomModifier;
+    if (character.jackOfAllTrades) value += Math.floor(proficiency / 2);
+    if (character.insightSkill.proficient) value += proficiency;
+    return value;
+  };
+
   return (
     <section>
       <p className="block-title">
         <b>Block One</b>
       </p>
       <section className="passives-and-proficiency">
+        <span>Proficiency {proficiency}</span>
         <div>
-          <span>{proficiency}</span>
-          <span>Proficiency</span>
-        </div>
-        <div>
+          <span>Inspiration</span>
           <input
             type="checkbox"
             defaultChecked={character.inspiration}
@@ -94,15 +109,24 @@ const Block1 = ({ character, updateCharacter }) => {
             name=""
             id=""
           />
-          <span>Inspiration</span>
         </div>
         <div>
-          <span>Passive Perception</span>
-          <span>{}</span>
+          <span>Passive Perception {calculatePassivePerception()}</span>
         </div>
         <div>
-          <span>Passive Insight</span>
-          <span>#</span>
+          <span>Passive Insight {calculatePassiveInsight()}</span>
+        </div>
+        <div>
+          <span>Jack of all Trades</span>
+          <input
+            type="checkbox"
+            defaultChecked={character.jackOfAllTrades}
+            onChange={(e) =>
+              updateCharacter({ jackOfAllTrades: e.target.checked })
+            }
+            name=""
+            id=""
+          />
         </div>
       </section>
       <section className="attributes">
@@ -115,10 +139,18 @@ const Block1 = ({ character, updateCharacter }) => {
           />
           <section>
             <SavingThrow
-              proficient={character.strengthSavingThrowProficient}
+              savingThrowName="strengthSavingThrowProficient"
+              proficientSavingThrow={{
+                strengthSavingThrowProficient:
+                  character.strengthSavingThrowProficient,
+              }}
               attributeValue={character.strength}
+              proficiency={proficiency}
+              updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="athletics"
               modifier={strengthModifier}
               skill={{
@@ -140,10 +172,18 @@ const Block1 = ({ character, updateCharacter }) => {
           />
           <section>
             <SavingThrow
-              proficient={character.dexteritySavingThrowProficient}
+              savingThrowName="dexteritySavingThrowProficient"
+              proficientSavingThrow={{
+                dexteritySavingThrowProficient:
+                  character.dexteritySavingThrowProficient,
+              }}
               attributeValue={character.dexterity}
+              proficiency={proficiency}
+              updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="acrobatics"
               modifier={dexterityModifier}
               skill={{
@@ -155,6 +195,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="sleight of hand"
               modifier={dexterityModifier}
               skill={{
@@ -166,6 +208,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="stealth"
               modifier={dexterityModifier}
               skill={{
@@ -187,8 +231,14 @@ const Block1 = ({ character, updateCharacter }) => {
           />
           <section>
             <SavingThrow
-              proficient={character.constitutionSavingThrowProficient}
+              savingThrowName="constitutionSavingThrowProficient"
+              proficientSavingThrow={{
+                constitutionSavingThrowProficient:
+                  character.constitutionSavingThrowProficient,
+              }}
               attributeValue={character.constitution}
+              proficiency={proficiency}
+              updateCharacter={updateCharacter}
             />
           </section>
         </section>
@@ -201,10 +251,18 @@ const Block1 = ({ character, updateCharacter }) => {
           />
           <section>
             <SavingThrow
-              proficient={character.intelligenceSavingThrowProficient}
+              savingThrowName="intelligenceSavingThrowProficient"
+              proficientSavingThrow={{
+                intelligenceSavingThrowProficient:
+                  character.intelligenceSavingThrowProficient,
+              }}
               attributeValue={character.intelligence}
+              proficiency={proficiency}
+              updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="arcana"
               modifier={intelligenceModifier}
               skill={{
@@ -216,6 +274,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="history"
               modifier={intelligenceModifier}
               skill={{
@@ -227,6 +287,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="investigation"
               modifier={intelligenceModifier}
               skill={{
@@ -238,6 +300,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="nature"
               modifier={intelligenceModifier}
               skill={{
@@ -249,6 +313,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="religion"
               modifier={intelligenceModifier}
               skill={{
@@ -270,10 +336,18 @@ const Block1 = ({ character, updateCharacter }) => {
           />
           <section>
             <SavingThrow
-              proficient={character.wisdomSavingThrowProficient}
+              savingThrowName="wisdomSavingThrowProficient"
+              proficientSavingThrow={{
+                wisdomSavingThrowProficient:
+                  character.wisdomSavingThrowProficient,
+              }}
               attributeValue={character.wisdom}
+              proficiency={proficiency}
+              updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="animal handling"
               modifier={wisdomModifier}
               skill={{
@@ -285,6 +359,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="insight"
               modifier={wisdomModifier}
               skill={{
@@ -296,6 +372,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="medicine"
               modifier={wisdomModifier}
               skill={{
@@ -307,6 +385,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="perception"
               modifier={wisdomModifier}
               skill={{
@@ -318,6 +398,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="survival"
               modifier={wisdomModifier}
               skill={{
@@ -339,10 +421,18 @@ const Block1 = ({ character, updateCharacter }) => {
           />
           <section>
             <SavingThrow
-              proficient={character.charismaSavingThrowProficient}
+              savingThrowName="charismaSavingThrowProficient"
+              proficientSavingThrow={{
+                charismaSavingThrowProficient:
+                  character.charismaSavingThrowProficient,
+              }}
               attributeValue={character.charisma}
+              proficiency={proficiency}
+              updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="deception"
               modifier={charismaModifier}
               skill={{
@@ -354,6 +444,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="intimidation"
               modifier={charismaModifier}
               skill={{
@@ -365,6 +457,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="performance"
               modifier={charismaModifier}
               skill={{
@@ -376,6 +470,8 @@ const Block1 = ({ character, updateCharacter }) => {
               updateCharacter={updateCharacter}
             />
             <Skill
+              jackOfAllTrades={character.jackOfAllTrades}
+              proficiency={proficiency}
               name="persuasion"
               modifier={charismaModifier}
               skill={{
