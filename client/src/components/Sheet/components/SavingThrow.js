@@ -30,7 +30,6 @@ const SavingThrow = ({
 
   return savingThrowProficient ? (
     <div className="saving-throw">
-      {console.log(savingThrowProficient)}
       <input
         type="checkbox"
         checked={savingThrowProficient[savingThrowName]}
