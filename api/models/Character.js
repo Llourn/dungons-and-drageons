@@ -90,15 +90,15 @@ const CharacterSchema = new Schema({
     type: String,
     default: "[Racial Traits]",
   },
-  lightArmourProficient: {
+  lightArmorProficient: {
     type: Boolean,
     default: false,
   },
-  mediumArmourProficient: {
+  mediumArmorProficient: {
     type: Boolean,
     default: false,
   },
-  heavyArmourProficient: {
+  heavyArmorProficient: {
     type: Boolean,
     default: false,
   },
@@ -251,6 +251,50 @@ const CharacterSchema = new Schema({
   jackOfAllTrades: {
     type: Boolean,
     default: false,
+  },
+  armorClass: {
+    type: Number,
+    default: 0,
+  },
+  initiative: {
+    type: Number,
+    default: 0,
+  },
+  speed: {
+    type: Number,
+    default: 30,
+  },
+  currentHitPoints: {
+    type: Number,
+    default: 0,
+  },
+  maxHitPoints: {
+    type: Number,
+    default: 0,
+  },
+  tempHitPoints: {
+    type: Number,
+    default: 0,
+  },
+  totalHitDice: {
+    type: Number,
+    default: 1,
+  },
+  usedHitDice: {
+    type: Number,
+    default: 0,
+  },
+  sizeHitDice: {
+    type: String,
+    default: 0,
+  },
+  deathSaveSuccesses: {
+    type: [Boolean],
+    default: [false, false, false],
+  },
+  deathSaveFailures: {
+    type: [Boolean],
+    default: [false, false, false],
   },
 });
 

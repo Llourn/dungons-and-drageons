@@ -20,23 +20,23 @@ const Block2 = ({ character, updateCharacter }) => {
           <span>Proficiencies</span>
         </div>
         <GearProficiency
-          gearName="Light Armour"
+          gearName="Light Armor"
           proficiency={{
-            lightArmourProficient: character.lightArmourProficient,
+            lightArmorProficient: character.lightArmorProficient,
           }}
           updateCharacter={updateCharacter}
         />
         <GearProficiency
-          gearName="Medium Armour"
+          gearName="Medium Armor"
           proficiency={{
-            mediumArmourProficient: character.mediumArmourProficient,
+            mediumArmorProficient: character.mediumArmorProficient,
           }}
           updateCharacter={updateCharacter}
         />
         <GearProficiency
-          gearName="Heavy Armour"
+          gearName="Heavy Armor"
           proficiency={{
-            heavyArmourProficient: character.heavyArmourProficient,
+            heavyArmorProficient: character.heavyArmorProficient,
           }}
           updateCharacter={updateCharacter}
         />

@@ -8,7 +8,11 @@ const ModText = ({ content, updateValue }) => {
   const handleFocus = (event) => event.target.select();
 
   useEffect(() => {
-    setName(content);
+    if (content !== undefined) {
+      setName(content);
+    } else {
+      setName("?");
+    }
   }, [content]);
 
   return toggle ? (
@@ -25,7 +29,6 @@ const ModText = ({ content, updateValue }) => {
     <input
       className="mod-text-input"
       autoFocus
-      // placeholder={name}
       value={name}
       onChange={(event) => setName(event.target.value)}
       type="text"

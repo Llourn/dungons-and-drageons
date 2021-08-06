@@ -41,22 +41,29 @@ app.post("/character/new", (req, res) => {
 app.put("/character/:id", async (req, res) => {
   let updates = {};
   console.log(req.body);
-  if (req.body.characterName) updates.characterName = req.body.characterName;
-  if (req.body.background) updates.background = req.body.background;
-  if (req.body.playerName) updates.playerName = req.body.playerName;
-  if (req.body.race) updates.race = req.body.race;
-  if (req.body.alignment) updates.alignment = req.body.alignment;
-  if (req.body.experiencePoints)
+  if (req.body.characterName !== undefined)
+    updates.characterName = req.body.characterName;
+  if (req.body.background !== undefined)
+    updates.background = req.body.background;
+  if (req.body.playerName !== undefined)
+    updates.playerName = req.body.playerName;
+  if (req.body.race !== undefined) updates.race = req.body.race;
+  if (req.body.alignment !== undefined) updates.alignment = req.body.alignment;
+  if (req.body.experiencePoints !== undefined)
     updates.experiencePoints = req.body.experiencePoints;
-  if (req.body.characterClass) updates.characterClass = req.body.characterClass;
-  if (req.body.level) updates.level = req.body.level;
-  if (req.body.inspiration) updates.inspiration = req.body.inspiration;
-  if (req.body.strength) updates.strength = req.body.strength;
-  if (req.body.dexterity) updates.dexterity = req.body.dexterity;
-  if (req.body.constitution) updates.constitution = req.body.constitution;
-  if (req.body.intelligence) updates.intelligence = req.body.intelligence;
-  if (req.body.wisdom) updates.wisdom = req.body.wisdom;
-  if (req.body.charisma) updates.charisma = req.body.charisma;
+  if (req.body.characterClass !== undefined)
+    updates.characterClass = req.body.characterClass;
+  if (req.body.level !== undefined) updates.level = req.body.level;
+  if (req.body.inspiration !== undefined)
+    updates.inspiration = req.body.inspiration;
+  if (req.body.strength !== undefined) updates.strength = req.body.strength;
+  if (req.body.dexterity !== undefined) updates.dexterity = req.body.dexterity;
+  if (req.body.constitution !== undefined)
+    updates.constitution = req.body.constitution;
+  if (req.body.intelligence !== undefined)
+    updates.intelligence = req.body.intelligence;
+  if (req.body.wisdom !== undefined) updates.wisdom = req.body.wisdom;
+  if (req.body.charisma !== undefined) updates.charisma = req.body.charisma;
 
   if (req.body.strengthSavingThrowProficient !== undefined)
     updates.strengthSavingThrowProficient =
@@ -75,39 +82,49 @@ app.put("/character/:id", async (req, res) => {
   if (req.body.charismaSavingThrowProficient !== undefined)
     updates.charismaSavingThrowProficient =
       req.body.charismaSavingThrowProficient;
-  if (req.body.athleticsSkill) updates.athleticsSkill = req.body.athleticsSkill;
-  if (req.body.acrobaticsSkill)
+  if (req.body.athleticsSkill !== undefined)
+    updates.athleticsSkill = req.body.athleticsSkill;
+  if (req.body.acrobaticsSkill !== undefined)
     updates.acrobaticsSkill = req.body.acrobaticsSkill;
-  if (req.body.sleightOfHandSkill)
+  if (req.body.sleightOfHandSkill !== undefined)
     updates.sleightOfHandSkill = req.body.sleightOfHandSkill;
-  if (req.body.stealthSkill) updates.stealthSkill = req.body.stealthSkill;
-  if (req.body.arcanaSkill) updates.arcanaSkill = req.body.arcanaSkill;
-  if (req.body.historySkill) updates.historySkill = req.body.historySkill;
-  if (req.body.investigationSkill)
+  if (req.body.stealthSkill !== undefined)
+    updates.stealthSkill = req.body.stealthSkill;
+  if (req.body.arcanaSkill !== undefined)
+    updates.arcanaSkill = req.body.arcanaSkill;
+  if (req.body.historySkill !== undefined)
+    updates.historySkill = req.body.historySkill;
+  if (req.body.investigationSkill !== undefined)
     updates.investigationSkill = req.body.investigationSkill;
-  if (req.body.natureSkill) updates.natureSkill = req.body.natureSkill;
-  if (req.body.religionSkill) updates.religionSkill = req.body.religionSkill;
-  if (req.body.animalHandlingSkill)
+  if (req.body.natureSkill !== undefined)
+    updates.natureSkill = req.body.natureSkill;
+  if (req.body.religionSkill !== undefined)
+    updates.religionSkill = req.body.religionSkill;
+  if (req.body.animalHandlingSkill !== undefined)
     updates.animalHandlingSkill = req.body.animalHandlingSkill;
-  if (req.body.insightSkill) updates.insightSkill = req.body.insightSkill;
-  if (req.body.medicineSkill) updates.medicineSkill = req.body.medicineSkill;
-  if (req.body.perceptionSkill)
+  if (req.body.insightSkill !== undefined)
+    updates.insightSkill = req.body.insightSkill;
+  if (req.body.medicineSkill !== undefined)
+    updates.medicineSkill = req.body.medicineSkill;
+  if (req.body.perceptionSkill !== undefined)
     updates.perceptionSkill = req.body.perceptionSkill;
-  if (req.body.survivalSkill) updates.survivalSkill = req.body.survivalSkill;
-  if (req.body.deceptionSkill) updates.deceptionSkill = req.body.deceptionSkill;
-  if (req.body.intimidationSkill)
+  if (req.body.survivalSkill !== undefined)
+    updates.survivalSkill = req.body.survivalSkill;
+  if (req.body.deceptionSkill !== undefined)
+    updates.deceptionSkill = req.body.deceptionSkill;
+  if (req.body.intimidationSkill !== undefined)
     updates.intimidationSkill = req.body.intimidationSkill;
-  if (req.body.performanceSkill)
+  if (req.body.performanceSkill !== undefined)
     updates.performanceSkill = req.body.performanceSkill;
-  if (req.body.persuasionSkill)
+  if (req.body.persuasionSkill !== undefined)
     updates.persuasionSkill = req.body.persuasionSkill;
   if (req.body.racialTraits) updates.racialTraits = req.body.racialTraits;
-  if (req.body.lightArmourProficient !== undefined)
-    updates.lightArmourProficient = req.body.lightArmourProficient;
-  if (req.body.mediumArmourProficient !== undefined)
-    updates.mediumArmourProficient = req.body.mediumArmourProficient;
-  if (req.body.heavyArmourProficient !== undefined)
-    updates.heavyArmourProficient = req.body.heavyArmourProficient;
+  if (req.body.lightArmorProficient !== undefined)
+    updates.lightArmorProficient = req.body.lightArmorProficient;
+  if (req.body.mediumArmorProficient !== undefined)
+    updates.mediumArmorProficient = req.body.mediumArmorProficient;
+  if (req.body.heavyArmorProficient !== undefined)
+    updates.heavyArmorProficient = req.body.heavyArmorProficient;
   if (req.body.simpleWeaponsProficient !== undefined)
     updates.simpleWeaponsProficient = req.body.simpleWeaponsProficient;
   if (req.body.martialWeaponsProficient !== undefined)
@@ -115,10 +132,31 @@ app.put("/character/:id", async (req, res) => {
   if (req.body.shieldsProficient !== undefined)
     updates.shieldsProficient = req.body.shieldsProficient;
   if (req.body.languages) updates.languages = req.body.languages;
-  if (req.body.toolsAndOtherProficiencies)
+  if (req.body.toolsAndOtherProficiencies !== undefined)
     updates.toolsAndOtherProficiencies = req.body.toolsAndOtherProficiencies;
   if (req.body.jackOfAllTrades !== undefined)
     updates.jackOfAllTrades = req.body.jackOfAllTrades;
+  if (req.body.armorClass !== undefined)
+    updates.armorClass = req.body.armorClass;
+  if (req.body.initiative !== undefined)
+    updates.initiative = req.body.initiative;
+  if (req.body.speed !== undefined) updates.speed = req.body.speed;
+  if (req.body.currentHitPoints !== undefined)
+    updates.currentHitPoints = req.body.currentHitPoints;
+  if (req.body.maxHitPoints !== undefined)
+    updates.maxHitPoints = req.body.maxHitPoints;
+  if (req.body.tempHitPoints !== undefined)
+    updates.tempHitPoints = req.body.tempHitPoints;
+  if (req.body.totalHitDice !== undefined)
+    updates.totalHitDice = req.body.totalHitDice;
+  if (req.body.usedHitDice !== undefined)
+    updates.usedHitDice = req.body.usedHitDice;
+  if (req.body.sizeHitDice !== undefined)
+    updates.sizeHitDice = req.body.sizeHitDice;
+  if (req.body.deathSaveSuccesses !== undefined)
+    updates.deathSaveSuccesses = req.body.deathSaveSuccesses;
+  if (req.body.deathSaveFailures !== undefined)
+    updates.deathSaveFailures = req.body.deathSaveFailures;
 
   const character = await Character.findByIdAndUpdate(
     { _id: req.params.id },

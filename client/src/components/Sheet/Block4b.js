@@ -7,7 +7,7 @@ const Block4b = () => {
         <b>Block Four B</b>
       </p>
       <p>Feats</p>
-      <TipTap content="Click here to edit this section. 📝" />
+      {/* <TipTap content="Click here to edit this section. 📝" /> */}
     </section>
   );
 };
