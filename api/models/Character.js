@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const CharacterSchema = new Schema({
+  characterOwner: {
+    type: String,
+    default: "",
+  },
   characterName: {
     type: String,
     default: "[Character Name]",

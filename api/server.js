@@ -1,11 +1,31 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
 const app = express();
+const jwt = require("jsonwebtoken");
+const { USERFRONT_PUBLIC_KEY } = require("./environment");
 
 app.use(express.json());
 app.use(cors());
+
+function authenticateToken(req, res, next) {
+  // Read the JWT access token from the request header
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  if (token == null) return res.sendStatus(401);
+  // Return 401 if no token
+  // Verify the token using the Userfront public key
+  jwt.verify(token, USERFRONT_PUBLIC_KEY, (err, auth) => {
+    // if (err) return res.sendStatus(403); // Return 403 if there is an error verifying
+    if (err)
+      return res.json({
+        message: "Bad token",
+      });
+    req.auth = auth;
+    console.log(req.auth);
+    next();
+  });
+}
 
 mongoose
   .connect("mongodb://myUserAdmin:password@localhost:27017/?authSource=admin", {
@@ -18,8 +38,42 @@ mongoose
 
 const Character = require("./models/Character");
 
-app.get("/characters", async (req, res) => {
-  const characters = await Character.find();
+app.get("/data", authenticateToken, (req, res) => {
+  console.log(req.auth);
+  return res.json({
+    someSecretData: "SHHHH!",
+  });
+});
+
+app.get("/users", authenticateToken, (req, res) => {
+  const authorization = req.auth.authorization["jb78xmn6"] || {};
+  console.log("Users called!");
+
+  if (authorization.roles.includes("admin")) {
+    // Allow access
+    console.log("ADMIN ACCESS GRANTED");
+    return res.json({
+      accessGranted: true,
+    });
+  } else {
+    // Deny access
+    console.log("ADMIN ACCESS DENIED");
+    return res.json({
+      accessGranted: false,
+    });
+  }
+});
+
+app.get("/characters", authenticateToken, async (req, res) => {
+  const characters = await Character.find(
+    {
+      characterOwner: req.auth.userUuid,
+    },
+    (error, response) => {
+      if (error) console.log(error);
+      if (response) console.log(response);
+    }
+  );
   res.json(characters);
 });
 
@@ -28,8 +82,9 @@ app.get("/characters/:id", async (req, res) => {
   res.json(character);
 });
 
-app.post("/character/new", (req, res) => {
+app.post("/character/new", authenticateToken, (req, res) => {
   const character = new Character({
+    characterOwner: req.auth.userUuid,
     characterName: req.body.characterName,
   });
 

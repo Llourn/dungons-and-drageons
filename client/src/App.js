@@ -1,8 +1,30 @@
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Characters from "./components/Characters";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
 import Sheet from "./components/Sheet";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import Userfront from "@userfront/react";
+
+Userfront.init("jb78xmn6");
+
+const SignupForm = Userfront.build({
+  toolId: "nodknk",
+});
+
+const LoginForm = Userfront.build({
+  toolId: "knkdal",
+});
+
+const PasswordResetForm = Userfront.build({
+  toolId: "ddakom",
+});
 
 function App() {
   return (
@@ -12,12 +34,18 @@ function App() {
         <div className="main">
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home SignupForm={SignupForm} LoginForm={LoginForm} />
             </Route>
-            <Route exact path="/Characters">
+            {/* <Route exact path="/login">
+              <Login LoginForm={LoginForm} />
+            </Route> */}
+            <Route exact path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route exact path="/characters">
               <Characters />
             </Route>
-            <Route path="/Characters/:id">
+            <Route path="/characters/:id">
               <Sheet />
             </Route>
           </Switch>
