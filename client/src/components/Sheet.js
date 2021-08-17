@@ -67,8 +67,8 @@ const Sheet = () => {
           <Block2 character={character} updateCharacter={updateCharacter} />
           <Block3 character={character} updateCharacter={updateCharacter} />
           <Block4 character={character} updateCharacter={updateCharacter} />
-          <Block4b />
-          {/* <Block5 />
+          {/* <Block4b />
+          <Block5 />
           <Block6 />
           <Block7 />
           <Block8 />

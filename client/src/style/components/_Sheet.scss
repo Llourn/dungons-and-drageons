@@ -172,7 +172,13 @@
 }
 
 // Block 4
-.attacks,
+.attacks {
+  > :first-child {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .equipment {
   > :not(:first-child) {
     display: flex;
